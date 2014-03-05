@@ -1,6 +1,7 @@
-angular.module('app', ['ui.bootstrap','ui.utils','ui.router','ngAnimate','user','employees']);
+angular.module('app', ['ui.bootstrap','ui.utils','ui.router','ngAnimate','user','employees','demo']);
 angular.module('user', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']); // <------ add user
 angular.module('employees', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']); // <------ add employees
+angular.module('demo', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']); // <------ add demo
 
 angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 
@@ -45,11 +46,11 @@ angular.module('app').run(function($rootScope) {
 
 });
 
-angular.module('app').factory('constantsService',function($http) {
+angular.module('app').service('constantsService', [ function() {
     var constantsService = {
         apiGetEndpoint: function( ) {
             return 'http://localhost:8888/Enterprise/app/api.php';
         }
     };
     return constantsService;
-});
+}]);
