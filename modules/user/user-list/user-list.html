@@ -1,0 +1,38 @@
+<div class="col-md-12" ng-controller="UserListCtrl">
+
+    <div class="jumbotron">
+        <h1>User Module</h1>
+        <p>A place to try out Bootstrap and AngularJS.<p>
+        <p>Clone it and GO!.<p>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Password</th>
+            <th>Salt</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-ng-repeat="user in users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.surname }}</td>
+            <td>{{ user.password }}</td>
+            <td>{{ user.salt }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    Name: <input type="text" data-ng-model="user.name"/>
+    Surname: <input type="text" data-ng-model="user.surname"/>
+    Password: <input type="text" data-ng-model="user.password"/>
+    Salt: <input type="text" data-ng-model="user.salt"/>
+    <button data-ng-click="addUser(user)">Add</button>
+
+</div>
