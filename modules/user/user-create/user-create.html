@@ -3,4 +3,14 @@
     <h1>User Module</h1>
     <h2>user-create</h2>
 
+    <hr>
+
+    Name: <input type="text" data-ng-model="user.name"/>
+    Surname: <input type="text" data-ng-model="user.surname"/>
+    Password: <input type="text" data-ng-model="user.password"/>
+    Salt: <input type="text" data-ng-model="user.salt"/>
+    <button data-ng-click="addUser(user)">Add</button>
+
+    <hr>
+
 </div>
