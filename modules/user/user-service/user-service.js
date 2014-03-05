@@ -1,19 +1,19 @@
-angular.module('user').factory('userService',function($http) {
+angular.module('user').factory('userService',function($http,constantsService) {
 	var userService = {
         createUser: function( userDetails ) {
-            return $http.post( 'http://localhost:8888/Enterprise2/app/api.php' + '/user', userDetails );
+            return $http.post( constantsService.apiGetEndpoint() + '/user', userDetails );
         },
         readUser: function( userID ) {
-            return $http.get('http://localhost:8888/Enterprise2/app/api.php' + '/user/' + userID );
+            return $http.get(constantsService.apiGetEndpoint() + '/user/' + userID );
         },
         readUsers: function() {
-            return $http.get('http://localhost:8888/Enterprise2/app/api.php' + '/user');
+            return $http.get(constantsService.apiGetEndpoint() + '/user');
         },
         updateUser: function( userDetails ) {
-            return $http.put( 'http://localhost:8888/Enterprise2/app/api.php' + '/user', userDetails );
+            return $http.put( constantsService.apiGetEndpoint() + '/user', userDetails );
         },
         deleteUser: function( userID ) {
-            return $http.delete( 'http://localhost:8888/Enterprise2/app/api.php' + '/user/' + userID );
+            return $http.delete( constantsService.apiGetEndpoint() + '/user/' + userID );
         }
     };
 	return userService;

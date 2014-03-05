@@ -22,6 +22,10 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
         url: '/user-update',
         templateUrl: 'modules/user/user-update/user-update.html'
     });
+    $stateProvider.state('demo-list', {
+        url: '/demo-list',
+        templateUrl: 'modules/demo/demo-list/demo-list.html'
+    });
     /* Add New States Above */
 
 });
@@ -39,4 +43,13 @@ angular.module('app').run(function($rootScope) {
         }
     };
 
+});
+
+angular.module('app').factory('constantsService',function($http) {
+    var constantsService = {
+        apiGetEndpoint: function( ) {
+            return 'http://localhost:8888/Enterprise/app/api.php';
+        }
+    };
+    return constantsService;
 });
