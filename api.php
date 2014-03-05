@@ -265,6 +265,7 @@ ArrestDB::Serve('POST', '/(#any)', function ($table)
 {
 
     // add this if the input contains normal json/application header
+
     $content_type_args = explode(";", $_SERVER['CONTENT_TYPE']); //parse content_type string
     if ($content_type_args[0] == "application/json"){
         $_POST = json_decode(file_get_contents("php://input"),true);
