@@ -4,10 +4,10 @@ angular.module('user').factory('userService',function($http,constantsService) {
             return $http.post( constantsService.apiGetEndpoint() + '/user', userDetails );
         },
         readUser: function( userID ) {
-            return $http.get(constantsService.apiGetEndpoint() + '/user/' + userID );
+            return $http.get( constantsService.apiGetEndpoint() + '/user/' + userID );
         },
         readUsers: function() {
-            return $http.get(constantsService.apiGetEndpoint() + '/user');
+            return $http.get( constantsService.apiGetEndpoint() + '/user' );
         },
         updateUser: function( userDetails ) {
             return $http.put( constantsService.apiGetEndpoint() + '/user', userDetails );
